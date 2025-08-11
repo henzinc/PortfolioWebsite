@@ -1,0 +1,57 @@
+---
+const items = [
+    'Home',
+    'Projekte',
+    'Über mich',
+    'Zertifikate',
+    'Kontakt'
+]
+---
+<style>
+    a {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    a:hover {
+        color: #efefef;
+        scale: 105%;
+    }
+
+    a:active {
+        color: inherit;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 172px;
+    }
+
+    .nav-container {
+        display: flex;
+        gap: 4rem;
+
+        a {
+            font-weight: bold;
+        }
+    }
+
+    #name-tag {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+</style>
+
+<nav>
+    <a id="name-tag" href="#Home">Henrik Schnell</a>
+    <div class="nav-container">
+        { items.map(item => <a href={"#" + item}>{item}</a>) }
+    </div>
+</nav>
