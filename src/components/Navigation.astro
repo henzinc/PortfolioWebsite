@@ -1,10 +1,10 @@
 ---
 const items = [
-    'Home',
-    'Projekte',
-    'Über mich',
-    'Zertifikate',
-    'Kontakt'
+    { label: 'Home', href: '' },
+    { label: 'Projekte', href: 'projects' },
+    { label: 'Über mich', href: 'about' },
+    { label: 'Zertifikate', href: 'certificates' },
+    { label: 'Kontakt', href: 'contact' }
 ]
 ---
 <style>
@@ -50,8 +50,8 @@ const items = [
 </style>
 
 <nav>
-    <a id="name-tag" href="#Home">Henrik Schnell</a>
+    <a id="name-tag" href="#">Henrik Schnell</a>
     <div class="nav-container">
-        { items.map(item => <a href={"#" + item}>{item}</a>) }
+        { items.map(item => <a href={"#" + item.href}>{item.label}</a>) }
     </div>
 </nav>

@@ -138,13 +138,13 @@ const certificates = [
         gap: 20px;
 
         img {
-            height: 128px;
-            width: 128px;
+            height: 108px;
+            width: 108px;
         }
     }
 </style>
 
-<div class="container">
+<div id="certificates" class="container">
     <div id="certificates-container">
         {certificates.map(certificate =>
                 <div class="certificate-wrapper">
@@ -153,7 +153,9 @@ const certificates = [
                             <a href={certificate.link} target="_blank">
                                 {certificate.name}
                             </a>
-                            <img src=`${certificate.companyIcon}` alt=`Logo von ${certificate.company}`>
+                            <a href={certificate.link} target="_blank">
+                                <img src=`${certificate.companyIcon}` alt=`Logo von ${certificate.company}`>
+                            </a>
                         </div>
                         <span class="company-name">
                     {certificate.company}
@@ -176,7 +178,7 @@ const certificates = [
                 <a class="certificate-name" href="#" target="_blank">Professional Scrum Master I (PSM I)</a>
                 <p class="certificate-date">seit 08/2025 - Scrum.org</p>
                 <p>
-                    Bestätigt meine Fähigkeit, Scrum-Prinzipien gezielt einzusetzen, um Teams zu unterstützen, Hindernisse zu beseitigen und einen effizienten, selbstorganisierten Arbeitsfluss zu fördern
+                    Anwenden von Scrum-Prinzipien, Rollen, Events und Artefakten, um selbstorganisierte und effiziente Teams zu fördern
                 </p>
             </div>
             <img src="/psm1.png" alt="Professional Scrum Master 1 Zertifikat">
@@ -186,7 +188,7 @@ const certificates = [
                 <a class="certificate-name" href="#" target="_blank">Professional Scrum Product Owner I (PSPO I)</a>
                 <p class="certificate-date">seit 08/2025 - Scrum.org</p>
                 <p>
-                    Unterstreicht meine Kompetenz, den Produktwert zu maximieren, eine klare Produktvision zu entwickeln und Stakeholder effektiv einzubinden, um erfolgreiche Produkte im agilen Umfeld zu gestalten
+                    Entwickeln einer klaren Produktvision, Maximieren des Produktwerts und effektives Einbinden von Stakeholdern im agilen Umfeld
                 </p>
             </div>
             <img src="/pspo1.png" alt="Professional Scrum Product Owner 1 Zertifikat"></img>
