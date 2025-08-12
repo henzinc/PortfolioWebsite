@@ -39,10 +39,21 @@ const certificates = [
 ]
 ---
 <style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        padding: 48px 172px;
+
+        img {
+            height: 32px;
+            width: 32px;
+        }
+    }
+
     #certificates-container {
         display: flex;
         flex-wrap: wrap;
-        padding: 48px 172px;
         gap: 20px;
     }
 
@@ -52,7 +63,8 @@ const certificates = [
         flex-direction: column;
     }
 
-    .certificate-wrapper {
+    .certificate-wrapper,
+    .scrum-certificate {
         flex: 1;
         min-height: 400px;
         width: 400px;
@@ -62,20 +74,31 @@ const certificates = [
         padding: 32px;
     }
 
-    a {
-        color: inherit;
-        text-decoration: none;
-        cursor: pointer;
+    .scrum-certificate {
+        display: flex;
+        min-height: auto;
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap-reverse;
+        }
+    }
+
+    a,
+    p.certificate-name {
         font-weight: bold;
         font-size: 1.25rem;
         line-height: 1.5rem;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
     }
 
     a:visited {
         color: inherit;
     }
 
-    a:hover {
+    a:hover,
+    .certificate-name:hover {
         color: #efefef;
         scale: 102%;
     }
@@ -104,38 +127,69 @@ const certificates = [
         line-height: normal;
     }
 
-    img {
-        height: 32px;
-        width: 32px;
+    span.company-name,
+    .certificate-date {
+        color: #0a66c2;
     }
 
-    span.company-name {
-        color: #0a66c2;
+    .scrum-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        img {
+            height: 128px;
+            width: 128px;
+        }
     }
 </style>
 
-<div id="certificates-container">
-    {certificates.map(certificate =>
-            <div class="certificate-wrapper">
-                <div class="wrapper">
-                    <div class="certificate-header">
-                        <a href={certificate.link} target="_blank">
-                            {certificate.name}
-                        </a>
-                        <img src=`${certificate.companyIcon}` alt=`Logo von ${certificate.company}`>
-                    </div>
-                    <span class="company-name">
+<div class="container">
+    <div id="certificates-container">
+        {certificates.map(certificate =>
+                <div class="certificate-wrapper">
+                    <div class="wrapper">
+                        <div class="certificate-header">
+                            <a href={certificate.link} target="_blank">
+                                {certificate.name}
+                            </a>
+                            <img src=`${certificate.companyIcon}` alt=`Logo von ${certificate.company}`>
+                        </div>
+                        <span class="company-name">
                     {certificate.company}
                 </span>
+                    </div>
+                    <ul>
+                        {certificate.description.map(listItem =>
+                                <li>
+                                    <span style="color: #f2675a">-</span>
+                                    <span class="certificate-description">{listItem}</span>
+                                </li>
+                        )}
+                    </ul>
                 </div>
-                <ul>
-                    {certificate.description.map(listItem =>
-                            <li>
-                                <span style="color: #f2675a">-</span>
-                                <span class="certificate-description">{listItem}</span>
-                            </li>
-                    )}
-                </ul>
+        )}
+    </div>
+    <div class="scrum-container">
+        <div class="scrum-certificate">
+            <div class="wrapper">
+                <a class="certificate-name" href="#" target="_blank">Professional Scrum Master I (PSM I)</a>
+                <p class="certificate-date">seit 08/2025 - Scrum.org</p>
+                <p>
+                    Bestätigt meine Fähigkeit, Scrum-Prinzipien gezielt einzusetzen, um Teams zu unterstützen, Hindernisse zu beseitigen und einen effizienten, selbstorganisierten Arbeitsfluss zu fördern
+                </p>
             </div>
-    )}
+            <img src="/psm1.png" alt="Professional Scrum Master 1 Zertifikat">
+        </div>
+        <div class="scrum-certificate">
+            <div class="wrapper">
+                <a class="certificate-name" href="#" target="_blank">Professional Scrum Product Owner I (PSPO I)</a>
+                <p class="certificate-date">seit 08/2025 - Scrum.org</p>
+                <p>
+                    Unterstreicht meine Kompetenz, den Produktwert zu maximieren, eine klare Produktvision zu entwickeln und Stakeholder effektiv einzubinden, um erfolgreiche Produkte im agilen Umfeld zu gestalten
+                </p>
+            </div>
+            <img src="/pspo1.png" alt="Professional Scrum Product Owner 1 Zertifikat"></img>
+        </div>
+    </div>
 </div>
