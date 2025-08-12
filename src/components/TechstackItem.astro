@@ -1,0 +1,45 @@
+---
+const { item } = Astro.props;
+---
+<style>
+    .item {
+        display: inline-flex;
+        align-items: center;
+        padding: var(--pad) 1rem;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+
+    .item:hover {
+        scale: 110%;
+
+        span {
+            color: #f2675a;
+        }
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    img {
+        height: 1.75rem;
+    }
+
+    span {
+        color: #8c8c8c;
+        font-size: 1.25rem;
+        letter-spacing: 0.1rem;
+        cursor: default;
+    }
+</style>
+
+<div class="item">
+    <span class="icon">
+        <img src={`/svgs/${item.icon}.svg`} alt={item.name}/>
+        {item.name}
+    </span>
+</div>
