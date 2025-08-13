@@ -1,0 +1,69 @@
+---
+
+---
+<style>
+    #contact {
+        background-color: #16232c;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 48px 172px;
+
+        > div {
+            flex: 1;
+        }
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+            scale: 102%;
+            color: #f2675a;
+        }
+    }
+
+    li {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin: 24px 0;
+    }
+
+    img {
+        height: 32px;
+        width: 32px;
+    }
+
+    p {
+        line-height: 2rem;
+    }
+</style>
+<div id="contact">
+    <h1>Kontakt</h1>
+    <div class="container">
+        <p>
+            <strong>Lass uns in Kontakt bleiben!</strong><br>
+            Ob Projektanfrage, Kooperation oder einfach ein netter Austausch, schreib mir gerne direkt per <a href="https://www.linkedin.com/in/henrik-schnell-b6a88535a/" target="_blank">LinkedIn</a> oder <a href="mailto:platzhalter@email.de" target="_blank">E-Mail</a>.
+        </p>
+        <ul>
+            <li>
+                <img src="/svgs/atsign.svg" alt="E-Mail Icon"></img>
+                <a href="mailto:platzhalter@email.de" target="_blank">E-Mail: platzhalter@email.de</a>
+            </li>
+            <li>
+                <img src="/svgs/linkedin.svg" alt="LinkedIn Icon"></img>
+                <a href="https://www.linkedin.com/in/henrik-schnell-b6a88535a/" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+                <img src="/svgs/github.svg" alt="GitHub Icon"></img>
+                <a href="https://github.com/henzinc" target="_blank">GitHub</a>
+            </li>
+        </ul>
+    </div>
+</div>
