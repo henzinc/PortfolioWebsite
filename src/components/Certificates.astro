@@ -35,6 +35,17 @@ const certificates = [
             "Erstellung einer grundlegenden Infrastruktur in Google Cloud",
             "Auswahl und Einsatz passender Google-Cloud-Speicheroptionen",
         ]
+    },
+    {
+        name: "Cisco Certified Network Associate (CCNAv7)",
+        company: "Cisco",
+        companyIcon: "/svgs/cisco.svg",
+        link: "platzhalter_cdn",
+        description: [
+            "Grundlagen der Netzwerktechnik mit Cisco-Hardware",
+            "OSI/TCP-IP-Modelle, IPv4/IPv6-Adressierung, VLANs, Routing, Switch-Konfiguration und Netzwerksicherheit",
+            "Praxisorientierte Planung, Implementierung und Fehlerbehebung kleiner bis mittelgroßer Netzwerke",
+        ]
     }
 ]
 ---
@@ -72,6 +83,11 @@ const certificates = [
         border: 1px solid #172c33;
         border-radius: 10px;
         padding: 32px;
+    }
+
+    .certificate-wrapper {
+        flex: 0 0 calc((100% - 40px) / 3);
+        box-sizing: border-box;
     }
 
     .scrum-certificate {
