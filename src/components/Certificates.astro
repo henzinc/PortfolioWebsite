@@ -160,55 +160,57 @@ const certificates = [
     }
 </style>
 
-<h1>Meine Zertifikate</h1>
-<div id="certificates" class="container">
-    <div id="certificates-container">
-        {certificates.map(certificate =>
-                <div class="certificate-wrapper">
-                    <div class="wrapper">
-                        <div class="certificate-header">
-                            <a href={certificate.link} target="_blank">
-                                {certificate.name}
-                            </a>
-                            <a href={certificate.link} target="_blank">
-                                <img src=`${certificate.companyIcon}` alt=`Logo von ${certificate.company}`>
-                            </a>
-                        </div>
-                        <span class="company-name">
+<div id="certificates">
+    <h1>Meine Zertifikate</h1>
+    <div class="container">
+        <div id="certificates-container">
+            {certificates.map(certificate =>
+                    <div class="certificate-wrapper">
+                        <div class="wrapper">
+                            <div class="certificate-header">
+                                <a href={certificate.link} target="_blank">
+                                    {certificate.name}
+                                </a>
+                                <a href={certificate.link} target="_blank">
+                                    <img src=`${certificate.companyIcon}` alt=`Logo von ${certificate.company}`>
+                                </a>
+                            </div>
+                            <span class="company-name">
                     {certificate.company}
                 </span>
+                        </div>
+                        <ul>
+                            {certificate.description.map(listItem =>
+                                    <li>
+                                        <span style="color: #f2675a">-</span>
+                                        <span class="certificate-description">{listItem}</span>
+                                    </li>
+                            )}
+                        </ul>
                     </div>
-                    <ul>
-                        {certificate.description.map(listItem =>
-                                <li>
-                                    <span style="color: #f2675a">-</span>
-                                    <span class="certificate-description">{listItem}</span>
-                                </li>
-                        )}
-                    </ul>
-                </div>
-        )}
-    </div>
-    <div class="scrum-container">
-        <div class="scrum-certificate">
-            <div class="wrapper">
-                <a class="certificate-name" href="#" target="_blank">Professional Scrum Master I (PSM I)</a>
-                <p class="certificate-date">seit 08/2025 - Scrum.org</p>
-                <p>
-                    Anwenden von Scrum-Prinzipien, Rollen, Events und Artefakten, um selbstorganisierte und effiziente Teams zu fördern
-                </p>
-            </div>
-            <img src="/psm1.png" alt="Professional Scrum Master 1 Zertifikat">
+            )}
         </div>
-        <div class="scrum-certificate">
-            <div class="wrapper">
-                <a class="certificate-name" href="#" target="_blank">Professional Scrum Product Owner I (PSPO I)</a>
-                <p class="certificate-date">seit 08/2025 - Scrum.org</p>
-                <p>
-                    Entwickeln einer klaren Produktvision, Maximieren des Produktwerts und effektives Einbinden von Stakeholdern im agilen Umfeld
-                </p>
+        <div class="scrum-container">
+            <div class="scrum-certificate">
+                <div class="wrapper">
+                    <a class="certificate-name" href="#" target="_blank">Professional Scrum Master I (PSM I)</a>
+                    <p class="certificate-date">seit 08/2025 - Scrum.org</p>
+                    <p>
+                        Anwenden von Scrum-Prinzipien, Rollen, Events und Artefakten, um selbstorganisierte und effiziente Teams zu fördern
+                    </p>
+                </div>
+                <img src="/psm1.png" alt="Professional Scrum Master 1 Zertifikat">
             </div>
-            <img src="/pspo1.png" alt="Professional Scrum Product Owner 1 Zertifikat"></img>
+            <div class="scrum-certificate">
+                <div class="wrapper">
+                    <a class="certificate-name" href="#" target="_blank">Professional Scrum Product Owner I (PSPO I)</a>
+                    <p class="certificate-date">seit 08/2025 - Scrum.org</p>
+                    <p>
+                        Entwickeln einer klaren Produktvision, Maximieren des Produktwerts und effektives Einbinden von Stakeholdern im agilen Umfeld
+                    </p>
+                </div>
+                <img src="/pspo1.png" alt="Professional Scrum Product Owner 1 Zertifikat"></img>
+            </div>
         </div>
     </div>
 </div>
