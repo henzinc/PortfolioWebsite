@@ -1,15 +1,32 @@
 ---
-
+import { SEO } from "astro-seo";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import '../global.css';
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Henrik S.",
+    "jobTitle": "Fullstack Web-Developer",
+    "url": "https://henrikschnell.de",
+    "sameAs": [
+        "https://www.linkedin.com/in/henrik-schnell-b6a88535a/",
+        "https://github.com/henzinc"
+    ]
+};
 ---
 
 <html lang="de">
     <head>
-        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Henrik Schnell</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <SEO
+            title="Henrik | Fullstack Developer – Web, Cloud & Agile"
+            description="Fullstack-Webentwickler mit Erfahrung in modernen Webtechnologien, Cloud-Lösungen und agilen Methoden. Projekte, Zertifikate und Portfolio im Überblick."
+            charset="UTF-8"
+        />
+        <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
     </head>
     <body>
         <Navigation />
