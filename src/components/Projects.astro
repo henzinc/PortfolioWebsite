@@ -1,0 +1,160 @@
+---
+const projects = [
+    {
+        name: "Lorcle",
+        description: "Ein Fullstack-Projekt mit Next.js (React + TypeScript), Supabase (PostgreSQL) und Cron Jobs, das Spielern täglich eine neue Challenge im Wordle-Stil bietet. Umfasst neben dem eigentlich Spiel Internationalisierung (i18n), Statistik-Tracking, Cron Jobs und Live-Deployment auf Vercel.",
+        link: "https://lorcle.net",
+        repository: "https://github.com/henzinc/lorcle",
+        stack: [
+            "Next.js", "React", "TypeScript", "PostgreSQL", "Tailwind CSS", "Vercel"
+        ],
+        images: [
+            { src: "projects/lorcle-vercel-deployment.png", alt: "Lorcle Deployment auf Vercel", href: "projects/lorcle-vercel-deployment.png", description: "Lorcle Deployment auf Vercel" },
+            { src: "projects/lorcle-guesses.png", alt: "Lorcle Rateversuche", href: "projects/lorcle-guesses.png", description: "Lorcle Rateversuche" },
+            { src: "projects/lorcle-i18n.png", alt: "Internationalisierung (i18n) Einstellung", href: "projects/lorcle-i18n.png", description: "Internationalisierung" },
+        ]
+    },
+    {
+        name: "Portfolio Webseite",
+        description: "Meine persönliche Portfolio-Seite, entwickelt mit Astro. Sie vereint modernes Design mit optimierter Performance, Accessibility, Best Practices und SEO (100/100 Lighthouse Score in allen Kategorien). Auf meiner Seite präsentiere ich meine Skills, Zertifikate und immer wieder neue Projekte.",
+        link: "https://henrikschnell.de",
+        repository: "https://github.com/henzinc/PortfolioWebsite",
+        stack: [
+            "Astro", "AWS Amplify", "AWS Route 53"
+        ],
+        images: [
+            { src: "projects/lighthouse-score.png", alt: "Screenshot des Google Lighthouse Testergebnisses", href: "projects/lighthouse-score-full.png", description: "Lighthouse Score" },
+            { src: "projects/aws-route53.png", alt: "Screenshot von AWS Route 53", href: "projects/aws-route53.png", description: "AWS Route 53 Domain" },
+            { src: "projects/aws-amplify-deployment.png", alt: "Screenshot von AWS Amplify", href: "projects/aws-amplify-deployment.png", description: "AWS Amplify Deployment" },
+        ]
+    },
+]
+---
+<style>
+    #projects {
+        background-color: #16232c;
+    }
+
+    a {
+        font-weight: bold;
+        text-underline-offset: 6px;
+        text-decoration: none;
+    }
+
+    a.project-name {
+        font-size: 1.15rem;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    a:hover {
+        color: #efefef;
+    }
+
+    a:active {
+        color: inherit;
+    }
+
+    a[type="button"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: auto;
+        width: fit-content;
+        padding: 12px 16px;
+        border: 1px solid var(--red-accent-color);
+        cursor: pointer;
+        text-decoration: none;
+
+        img {
+            height: 24px;
+            width: auto;
+        }
+
+        &:hover {
+            scale: 105%;
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        padding: 48px 172px;
+    }
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 960px;
+        border-top: 1px solid #1a343b;
+        padding: 24px;
+    }
+
+    p {
+        max-width: 960px;
+    }
+
+    p.stack {
+        font-weight: bold;
+        color: var(--blue-accent-color);
+    }
+
+    .images-wrapper {
+        display: flex;
+        gap: 16px;
+
+        a {
+            height: fit-content;
+            width: auto;
+            padding: 8px;
+            border: 1px solid #1a343b;
+            border-radius: 5px;
+        }
+
+        img {
+            height: 64px;
+        }
+    }
+
+    .image {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 4px;
+
+        > p {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+<div id="projects">
+    <h1>Projekte</h1>
+    <div class="container">
+        {projects.map(project =>
+            <div class="project-container">
+                <a class="project-name" href={project.link} target="_blank">{project.name}</a>
+                <p>{project.description}</p>
+                <p class="stack">Techstack: {project.stack.join(', ')}</p>
+                <div class="images-wrapper">
+                    {project.images.map(image =>
+                        <div class="image">
+                            <a href={image.href} target="_blank">
+                                <img src={image.src} alt={image.alt} />
+                            </a>
+                            <p>{image.description}</p>
+                        </div>
+                    )}
+                </div>
+                <a type="button" href={project.repository} target="_blank">
+                    Code auf GitHub
+                    <img src="/svgs/github.svg" alt="Icon zum GitHub Repository" style="padding-left: 8px">
+                </a>
+            </div>
+        )}
+    </div>
+</div>
